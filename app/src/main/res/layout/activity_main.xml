@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.motion.widget.MotionLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    app:layoutDescription="@xml/activity_main_scene"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/app_bar"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layoutDescription="@xml/activity_main_xml_app_bar_scene"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardElevation="70dp"
-        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/scroll"
         >
 
         <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -26,29 +25,32 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/profile_pic"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/back_arrow"
+            app:layout_constraintTop_toBottomOf="@id/back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="16dp"
             app:roundPercent="1" />
+
         <ImageView
             android:id="@+id/back_arrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/arrow_ic"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="@id/profile_picture"
-            app:layout_constraintBottom_toTopOf="@id/profile_picture"
-            android:layout_marginBottom="16dp"
-            />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/menu_ic"
-            app:layout_constraintTop_toTopOf="@id/back_arrow"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="@id/back_arrow"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/back_arrow" />
 
         <TextView
             android:id="@+id/name"
@@ -59,7 +61,7 @@
             android:text="The chance"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/profile_picture"
+            app:layout_constraintBottom_toTopOf="@id/subscribers"
             app:layout_constraintStart_toEndOf="@id/profile_picture"
             app:layout_constraintTop_toTopOf="@id/profile_picture" />
 
@@ -72,217 +74,217 @@
             android:textColor="@color/gray"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@id/name"
-            app:layout_constraintTop_BottomOf="@id/name"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintBottom_toBottomOf="@id/profile_picture"
+             />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
-   <ScrollView
-       android:id="@+id/scroll"
-       android:layout_width="match_parent"
-       android:layout_height="0dp"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@id/app_bar"
-       app:layout_constraintBottom_toBottomOf="parent"
-       >
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="0dp"
-           android:orientation="vertical"
-           >
-           <androidx.constraintlayout.widget.ConstraintLayout
-               android:id="@+id/info"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:background="@color/info"
-               >
-               <TextView
-                   android:id="@+id/info_heading"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto_medium"
-                   android:textColor="@color/light_blue"
-                   android:layout_marginStart="16dp"
-                   android:layout_marginTop="16dp"
-                   android:text="Info"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toTopOf="parent"
-                   />
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/info"
+                >
+                <TextView
+                    android:id="@+id/info_heading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/light_blue"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Info"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
 
-               <TextView
-                   android:id="@+id/invite_link"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto"
-                   android:textColor="@color/white"
-                   android:text="t.me/theChance101"
-                   app:layout_constraintStart_toStartOf="@id/info_heading"
-                   app:layout_constraintTop_toBottomOf="@id/info_heading"
-                   android:layout_marginTop="8dp"
-                   />
-
-
-               <TextView
-                   android:id="@+id/invite_link_description"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto"
-                   android:textColor="@color/gray"
-                   android:text="Invite Link"
-                   app:layout_constraintStart_toStartOf="@id/invite_link"
-                   app:layout_constraintTop_toBottomOf="@id/invite_link"
-                   android:layout_marginTop="4dp"
-                   android:textSize="12sp"
-                   />
-
-               <ImageView
-                   android:id="@+id/qr_code"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:background="@drawable/qr_code_ic"
-                   android:layout_marginEnd="16dp"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintTop_toTopOf="@id/invite_link"
-                   app:layout_constraintBottom_toBottomOf="@id/invite_link_description"
-                   />
-
-               <View
-                   android:id="@+id/line"
-                   android:layout_width="0dp"
-                   android:layout_height="0.5dp"
-                   android:layout_marginTop="16dp"
-                   android:layout_marginBottom="16dp"
-                   android:background="@color/black"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintStart_toStartOf="@id/invite_link_description"
-                   app:layout_constraintTop_toBottomOf="@id/invite_link_description" />
-
-               <TextView
-                   android:id="@+id/notification"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="Notifications"
-                   android:textColor="@color/light_blue"
-                   app:layout_constraintStart_toStartOf="@id/info_heading"
-                   app:layout_constraintTop_toBottomOf="@+id/line"
-                   android:layout_marginTop="16dp"
-                   />
-
-               <TextView
-                   android:id="@+id/status"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="On"
-                   android:textColor="@color/gray"
-                   android:textSize="12sp"
-                   android:layout_marginTop="4dp"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   app:layout_constraintStart_toStartOf="@id/notification"
-                   app:layout_constraintTop_toBottomOf="@id/notification"
-                   android:layout_marginBottom="16dp"
-
-                   />
-
-               <androidx.appcompat.widget.SwitchCompat
-                   android:id="@+id/switch_notification"
-                   android:layout_width="wrap_content"
-                   android:layout_height="24dp"
-                   android:checked="true"
-                   android:thumb="@drawable/switch_thumb_selector"
-                   app:layout_constraintBottom_toBottomOf="@id/status"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintTop_toTopOf="@id/notification"
-                   app:track="@drawable/switch_track_selector"
-                   android:layout_marginEnd="8dp"
-                   />
-
-               <View
-                   android:id="@+id/vertical_line"
-                   android:layout_width="0.5dp"
-                   android:layout_height="0dp"
-                   android:background="@color/black"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintEnd_toStartOf="@id/switch_notification"
-                   app:layout_constraintTop_toTopOf="@id/switch_notification"
-                   app:layout_constraintBottom_toBottomOf="@id/switch_notification"
-                   />
+                <TextView
+                    android:id="@+id/invite_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/white"
+                    android:text="t.me/theChance101"
+                    app:layout_constraintStart_toStartOf="@id/info_heading"
+                    app:layout_constraintTop_toBottomOf="@id/info_heading"
+                    android:layout_marginTop="8dp"
+                    />
 
 
-           </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/invite_link_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:textColor="@color/gray"
+                    android:text="Invite Link"
+                    app:layout_constraintStart_toStartOf="@id/invite_link"
+                    app:layout_constraintTop_toBottomOf="@id/invite_link"
+                    android:layout_marginTop="4dp"
+                    android:textSize="12sp"
+                    />
 
-           <androidx.constraintlayout.widget.ConstraintLayout
-               android:id="@+id/shared"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_marginTop="16dp"
-               android:background="@color/info"
-               >
+                <ImageView
+                    android:id="@+id/qr_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/qr_code_ic"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/invite_link"
+                    app:layout_constraintBottom_toBottomOf="@id/invite_link_description"
+                    />
 
-               <TextView
-                   android:id="@+id/media"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto_medium"
-                   android:text="Media"
-                   android:textColor="@color/light_blue"
-                   android:textSize="14sp"
-                   android:layout_marginTop="16dp"
-                   android:layout_marginBottom="16dp"
-                   app:layout_constraintEnd_toStartOf="@+id/files"
-                   app:layout_constraintHorizontal_bias="0.5"
-                   app:layout_constraintStart_toStartOf="parent"
-                   app:layout_constraintTop_toTopOf="parent"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   />
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/invite_link_description"
+                    app:layout_constraintTop_toBottomOf="@id/invite_link_description" />
 
-               <TextView
-                   android:id="@+id/files"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto_medium"
-                   android:text="Files"
-                   android:textColor="@color/white"
-                   android:textSize="14sp"
-                   app:layout_constraintBottom_toBottomOf="@id/media"
-                   app:layout_constraintEnd_toStartOf="@+id/links"
-                   app:layout_constraintHorizontal_bias="0.5"
-                   app:layout_constraintStart_toEndOf="@+id/media"
-                   app:layout_constraintTop_toTopOf="@id/media" />
+                <TextView
+                    android:id="@+id/notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    android:textColor="@color/light_blue"
+                    app:layout_constraintStart_toStartOf="@id/info_heading"
+                    app:layout_constraintTop_toBottomOf="@+id/line"
+                    android:layout_marginTop="16dp"
+                    />
 
-               <TextView
-                   android:id="@+id/links"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:fontFamily="@font/roboto_medium"
-                   android:text="Links"
-                   android:textColor="@color/white"
-                   android:textSize="14sp"
-                   app:layout_constraintBottom_toBottomOf="@+id/files"
-                   app:layout_constraintEnd_toEndOf="parent"
-                   app:layout_constraintHorizontal_bias="0.5"
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="On"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/notification"
+                    app:layout_constraintTop_toBottomOf="@id/notification"
+                    android:layout_marginBottom="16dp"
 
-                   app:layout_constraintStart_toEndOf="@+id/files"
-                   app:layout_constraintTop_toTopOf="@id/files" />
+                    />
 
-               <androidx.constraintlayout.utils.widget.ImageFilterView
-                   android:id="@+id/line_blue"
-                   android:layout_width="0dp"
-                   android:layout_height="4dp"
-                   android:background="@color/light_blue"
-                   app:layout_constraintEnd_toEndOf="@id/media"
-                   app:layout_constraintStart_toStartOf="@id/media"
-                   app:layout_constraintBottom_toBottomOf="parent"
-                   app:roundPercent="1"
-                   />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_notification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:checked="true"
+                    android:thumb="@drawable/switch_thumb_selector"
+                    app:layout_constraintBottom_toBottomOf="@id/status"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/notification"
+                    app:track="@drawable/switch_track_selector"
+                    android:layout_marginEnd="8dp"
+                    />
 
-
-           </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-       </LinearLayout>
-
-   </ScrollView>
+                <View
+                    android:id="@+id/vertical_line"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/switch_notification"
+                    app:layout_constraintTop_toTopOf="@id/switch_notification"
+                    app:layout_constraintBottom_toBottomOf="@id/switch_notification"
+                    />
 
 
-</androidx.constraintlayout.motion.widget.MotionLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/shared"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/info"
+                >
+
+                <TextView
+                    android:id="@+id/media"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Media"
+                    android:textColor="@color/light_blue"
+                    android:textSize="14sp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/files"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/files"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Files"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/media"
+                    app:layout_constraintEnd_toStartOf="@+id/links"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/media"
+                    app:layout_constraintTop_toTopOf="@id/media" />
+
+                <TextView
+                    android:id="@+id/links"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="Links"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/files"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+
+                    app:layout_constraintStart_toEndOf="@+id/files"
+                    app:layout_constraintTop_toTopOf="@id/files" />
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:id="@+id/line_blue"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:background="@color/light_blue"
+                    app:layout_constraintEnd_toEndOf="@id/media"
+                    app:layout_constraintStart_toStartOf="@id/media"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:roundPercent="1"
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
