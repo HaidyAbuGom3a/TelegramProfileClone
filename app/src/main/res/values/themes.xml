@@ -11,7 +11,6 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/app_bar</item>
-        <!-- Customize your theme here. -->
     </style>
 
     <style name="MySwitchStyle" parent="Widget.MaterialComponents.CompoundButton.Switch">

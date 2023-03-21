@@ -40,7 +40,8 @@
             android:layout_marginStart="16dp"
             android:background="@drawable/arrow_ic"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <ImageView
             android:id="@+id/menu"
@@ -64,6 +65,27 @@
             app:layout_constraintBottom_toTopOf="@id/subscribers"
             app:layout_constraintStart_toEndOf="@id/profile_picture"
             app:layout_constraintTop_toTopOf="@id/profile_picture" />
+        <View
+            android:id="@+id/gradiant_top"
+             android:layout_height="0.1dp"
+             android:layout_width="0dp"
+            android:background="@drawable/gradiant_bg_top"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:alpha="0"
+            />
+
+        <View
+            android:id="@+id/gradiant_bottom"
+            android:layout_height="0.1dp"
+            android:layout_width="0dp"
+            android:background="@drawable/gradiant_bg_bottom"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/profile_picture"
+            android:alpha="0"
+            />
 
         <TextView
             android:id="@+id/subscribers"
@@ -201,7 +223,7 @@
 
                 <View
                     android:id="@+id/vertical_line"
-                    android:layout_width="0.5dp"
+                    android:layout_width="0.8dp"
                     android:layout_height="0dp"
                     android:background="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -263,7 +285,6 @@
                     app:layout_constraintBottom_toBottomOf="@+id/files"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-
                     app:layout_constraintStart_toEndOf="@+id/files"
                     app:layout_constraintTop_toTopOf="@id/files" />
 
