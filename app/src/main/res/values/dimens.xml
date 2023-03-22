@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="profile_pic_dimens_big">60dp</dimen>
+    <dimen name="profile_pic_dimens_small">40dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_medium_minus">-16dp</dimen>
+    <dimen name="text_large">20sp</dimen>
+    <dimen name="text_tiny">12sp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_small_minus">-8dp</dimen>
+    <dimen name="margin_tiny">4dp</dimen>
+    <dimen name="icon_height">24dp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="line_height">4dp</dimen>
+    <dimen name="profile_height_final">350dp</dimen>
+</resources>

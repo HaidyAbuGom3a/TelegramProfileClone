@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TelegramProfileClone</string>
+    <string name="name_tv">The chance</string>
+    <string name="subscribers_tv">818 subscribers</string>
+    <string name="info_tv">Info</string>
+    <string name="inf_content">t.me/theChance101</string>
+    <string name="invite_link_tv">Invite Link</string>
+    <string name="notifications_tv">Notifications</string>
+    <string name="notification_state">On</string>
+    <string name="media">Media</string>
+    <string name="files">Files</string>
+    <string name="links">Links</string>
 </resources>
